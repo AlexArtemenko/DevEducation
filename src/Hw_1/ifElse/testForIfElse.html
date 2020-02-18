@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <script>
+      mocha.setup("bdd");
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <script>
+      var assert = chai.assert;
+    </script>
+    <script src="./task1.js"></script>
+    <script src="./task2.js"></script>
+    <script src="./task3.js"></script>
+    <script src="./task4.js"></script>
+    <script src="./task5.js"></script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+
+    <script>
+      describe("task1", function() {
+        it("передаем в а = 'пустую строку'", function() {
+          assert.equal(task1("", 3), undefined);
+        });
+        it("передаем в а = null", function() {
+          assert.equal(task1(null, 3), undefined);
+        });
+        it("передаем в а = undefined", function() {
+          assert.equal(task1(undefined, 3), undefined);
+        });
+        it("передаем в а = false", function() {
+          assert.equal(task1(false, 3), undefined);
+        });
+        it("передаем в а = String", function() {
+          assert.equal(task1("hello", 3), undefined);
+        });
+        it("передаем в а = [Array]", function() {
+          assert.equal(task1([], 3), undefined);
+        });
+        it("передаем в а = {object}", function() {
+          assert.equal(task1({}, 3), undefined);
+        });
+        it("передаем в а = Function(){}", function() {
+          assert.equal(
+            task1(function() {
+              return "hello";
+            }, 3),
+            undefined
+          );
+        });
+        it("передаем в а = Boolean (false)", function() {
+          assert.equal(task1(false, 3), undefined);
+        });
+        it("передаем в а = Boolean (true)", function() {
+          assert.equal(task1(true, 3), undefined);
+        });
+        it("передаем в а = NaN", function() {
+          assert.equal(task1(NaN, 3), undefined);
+        });
+        it("передаем в а = Infinity", function() {
+          assert.equal(task1(Infinity, 3), undefined);
+        });
+        it("передаем в а = -1", function() {
+          assert.equal(task1(-1, 3), undefined);
+        });
+        it("a = 4, b = 3 - четное, sum = 12", function() {
+          assert.equal(task1(4, 3), 12);
+        });
+        it("a = 3 - не четное, b = 3, sum = 6, выполнится сложение так как по условию, если а не четное, то a + b", function() {
+          assert.equal(task1(3, 3), 6);
+        });
+      });
+    </script>
+
+    <script>
+      describe("task2", function() {
+        it("передаем в х = 'пустую строку'", function() {
+          assert.equal(coordinate("", 3), undefined);
+        });
+        it("передаем в х = null", function() {
+          assert.equal(coordinate(null, 3), undefined);
+        });
+        it("передаем в х = undefined", function() {
+          assert.equal(coordinate(undefined, 3), undefined);
+        });
+        it("передаем в х = false", function() {
+          assert.equal(coordinate(false, 3), undefined);
+        });
+        it("передаем в х = String", function() {
+          assert.equal(coordinate("hello", 3), undefined);
+        });
+        it("передаем в х = [Array]", function() {
+          assert.equal(coordinate([], 3), undefined);
+        });
+        it("передаем в х = {object}", function() {
+          assert.equal(coordinate({}, 3), undefined);
+        });
+        it("передаем в х = Function(){}", function() {
+          assert.equal(
+            coordinate(function() {
+              return "hello";
+            }, 3),
+            undefined
+          );
+        });
+        it("передаем в х = Boolean (false)", function() {
+          assert.equal(coordinate(false, 3), undefined);
+        });
+        it("передаем в х = Boolean (true)", function() {
+          assert.equal(coordinate(true, 3), undefined);
+        });
+        it("передаем в х = NaN", function() {
+          assert.equal(coordinate(NaN, 3), undefined);
+        });
+        it("передаем в х = Infinity", function() {
+          assert.equal(coordinate(Infinity, 3), undefined);
+        });
+        it("передаем в х = -10, у = -10. Результат: first quarter", function() {
+          assert.equal(coordinate(10, 10), "first quarter");
+        });
+        it("передаем в х = -10, у = 10. Результат: second quarter", function() {
+          assert.equal(coordinate(-10, 10), "second quarter");
+        });
+        it("передаем в х = -10, у = -10. Результат: third quarter", function() {
+          assert.equal(coordinate(-10, -10), "third quarter");
+        });
+        it("передаем в х = 10, у = - 10. Результат: four quarter", function() {
+          assert.equal(coordinate(10, -10), "four quarter");
+        });
+      });
+    </script>
+
+    <script>
+      describe("task3", function() {
+        it("передаем в a = 'пустую строку'", function() {
+          assert.equal(sum("", 3, 3), undefined);
+        });
+        it("передаем в a = null", function() {
+          assert.equal(sum(null, 3, null), undefined);
+        });
+        it("передаем в a = undefined", function() {
+          assert.equal(sum(undefined, 3, undefined), undefined);
+        });
+        it("передаем в a = false", function() {
+          assert.equal(sum(false, false, 2), undefined);
+        });
+        it("передаем в b = String", function() {
+          assert.equal(sum(2, "hello", 3), undefined);
+        });
+        it("передаем в a = [Array]", function() {
+          assert.equal(sum(2, [], 3), undefined);
+        });
+        it("передаем в b = {object}", function() {
+          assert.equal(sum(2, {}, 3), undefined);
+        });
+        it("передаем в b = Function(){}", function() {
+          assert.equal(
+            sum(
+              "11",
+              function() {
+                return "hello";
+              },
+              3
+            ),
+            undefined
+          );
+        });
+        it("передаем в a = Boolean (false)", function() {
+          assert.equal(sum(false, 3, 3), undefined);
+        });
+        it("передаем в b = Boolean (true)", function() {
+          assert.equal(sum(false, true, 3), undefined);
+        });
+        it("передаем в a,b = NaN", function() {
+          assert.equal(sum(NaN, NaN, 3), undefined);
+        });
+        it("передаем в b = Infinity", function() {
+          assert.equal(sum(3, Infinity, 3), undefined);
+        });
+        it("передаем в a=10, b=10, c=10, result = 30", function() {
+          assert.equal(sum(10, 10, 10), 30);
+        });
+        it("передаем в a=-10, b=10, c=10, result = 20", function() {
+          assert.equal(sum(-10, 10, 10), 20);
+        });
+        it("передаем в a=-10, b=-10, c=10, result = 10", function() {
+          assert.equal(sum(-10, -10, 10), 10);
+        });
+        it("передаем в a=0, b=0, c=0, result = undefined", function() {
+          assert.equal(sum(0, 0, 0), undefined);
+        });
+      });
+    </script>
+    <script>
+      describe("task4", function() {
+        it("передаем в a = 'пустую строку'", function() {
+          assert.equal(sumOrMultiple("", 2, 3), undefined);
+        });
+        it("передаем в a = null", function() {
+          assert.equal(sumOrMultiple(null, 3, null), undefined);
+        });
+        it("передаем в a = undefined", function() {
+          assert.equal(sumOrMultiple(undefined, 3, undefined), undefined);
+        });
+        it("передаем в a = false", function() {
+          assert.equal(sumOrMultiple(false, false, 2), undefined);
+        });
+        it("передаем в b = String", function() {
+          assert.equal(sumOrMultiple(2, "hello", 3), undefined);
+        });
+        it("передаем в a = [Array]", function() {
+          assert.equal(sumOrMultiple(2, [], 3), undefined);
+        });
+        it("передаем в b = {object}", function() {
+          assert.equal(sumOrMultiple(2, {}, 3), undefined);
+        });
+        it("передаем в b = Function(){}", function() {
+          assert.equal(
+            sumOrMultiple(
+              "11",
+              function() {
+                return "hello";
+              },
+              3
+            ),
+            undefined
+          );
+        });
+        it("передаем в a = Boolean (false)", function() {
+          assert.equal(sumOrMultiple(false, 3, 3), undefined);
+        });
+        it("передаем в b = Boolean (true)", function() {
+          assert.equal(sumOrMultiple(false, true, 3), undefined);
+        });
+        it("передаем в a,b = NaN", function() {
+          assert.equal(sumOrMultiple(NaN, NaN, 3), undefined);
+        });
+        it("передаем в b = Infinity", function() {
+          assert.equal(sumOrMultiple(3, Infinity, 3), undefined);
+        });
+        it("передаем в a=10, b=10, c=10, result = 1003", function() {
+          assert.equal(sumOrMultiple(10, 10, 10), 1003);
+        });
+        it("передаем в a=-10, b=10, c=10, result = 20", function() {
+          assert.equal(sumOrMultiple(-10, 10, 10), 13);
+        });
+        it("передаем в a=-10, b=-10, c=-10, result = -27", function() {
+          assert.equal(sumOrMultiple(-10, -10, -10), -27);
+        });
+        it("передаем в a=0, b=0, c=0, result = undefined", function() {
+          assert.equal(sumOrMultiple(0, 0, 0), undefined);
+        });
+        it("передаем в a=1, b=1, c=1, result = 6", function() {
+          assert.equal(sumOrMultiple(1, 1, 1), 6);
+        });
+        it("передаем в a=1, b=2, c=0, result = 6", function() {
+          assert.equal(sumOrMultiple(0, 0, 0), undefined);
+        });
+      });
+    </script>
+    <script>
+      describe("task5", function() {
+        it("передаем в num = 'пустую строку'", function() {
+          assert.equal(getStudentRating(""), undefined);
+        });
+        it("передаем в num = null", function() {
+          assert.equal(getStudentRating(null), undefined);
+        });
+        it("передаем в num = undefined", function() {
+          assert.equal(getStudentRating(undefined), undefined);
+        });
+        it("передаем в num = false", function() {
+          assert.equal(getStudentRating(false), undefined);
+        });
+        it("передаем в num = String", function() {
+          assert.equal(getStudentRating("hello"), undefined);
+        });
+        it("передаем в num = [Array]", function() {
+          assert.equal(getStudentRating([]), undefined);
+        });
+        it("передаем в num = {object}", function() {
+          assert.equal(getStudentRating({}), undefined);
+        });
+        it("передаем в num = Function(){}", function() {
+          assert.equal(
+            getStudentRating(function() {
+              return "hello";
+            }),
+            undefined
+          );
+        });
+        it("передаем в num = Boolean (false)", function() {
+          assert.equal(getStudentRating(false), undefined);
+        });
+        it("передаем в num = Boolean (true)", function() {
+          assert.equal(getStudentRating(true), undefined);
+        });
+        it("передаем в num = NaN", function() {
+          assert.equal(getStudentRating(NaN), undefined);
+        });
+        it("передаем в num = Infinity", function() {
+          assert.equal(getStudentRating(Infinity), undefined);
+        });
+        it("передаем в num = -1", function() {
+          assert.equal(getStudentRating(-1), undefined);
+        });
+        it("num = 1 - 'F'", function() {
+          assert.equal(getStudentRating(1), "F");
+        });
+        it("num = 20 - 'E'", function() {
+          assert.equal(getStudentRating(20), "E");
+        });
+        it("num = 40 - 'D'", function() {
+          assert.equal(getStudentRating(1), "F");
+        });
+        it("num = 60 - 'F'", function() {
+          assert.equal(getStudentRating(60), "C");
+        });
+        it("num = 80 - 'B'", function() {
+          assert.equal(getStudentRating(80), "B");
+        });
+        it("num = 100 - 'A'", function() {
+          assert.equal(getStudentRating(100), "A");
+        });
+        it("num > 100 - Undefined", function() {
+          assert.equal(getStudentRating(120), undefined);
+        });
+        it("num < 0 - Undefined", function() {
+          assert.equal(getStudentRating(-10), undefined);
+        });
+      });
+    </script>
+
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>

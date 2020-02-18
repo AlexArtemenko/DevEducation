@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <script>
+      mocha.setup("bdd");
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <script>
+      var assert = chai.assert;
+    </script>
+    <script src="./tusk1.js"></script>
+    <script src="./tusk2.js"></script>
+    <script src="./tusk3.js"></script>
+    <script src="./tusk4.js"></script>
+    <script src="./tusk5.js"></script>
+    <script src="./tusk6.js"></script>
+    <script src="./tusk7.js"></script>
+    <script src="./tusk8.js"></script>
+    <script src="./tusk9_1.js"></script>
+    <script src="./tusk9_2.js"></script>
+    <script src="./tusk9_3.js"></script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+
+    <script>
+      describe("Получаем минимальный элемент из массива", function() {
+        it("Передаем пустую строку", function() {
+          assert.equal(minValueInArray(""), "Here must be array");
+        });
+        it("Передаем пустой массив []", function() {
+          assert.equal(minValueInArray([]), "Array is empty");
+        });
+        it("Передаем массив [22,'a',1,5,55] и получаем минимальный элемент массива, и получаем 1", function() {
+          assert.equal(minValueInArray([22, "a", 1, 5, 55]), "1");
+        });
+      });
+    </script>
+
+    <script>
+      describe("Получение максимального элеманта из массива", function() {
+        it("Передаем пустую строку", function() {
+          assert.equal(maxVal(""), "Here must be array");
+        });
+        it("Передаем пустой массив []", function() {
+          assert.equal(maxVal([]), "Array is empty");
+        });
+        it("Передаем массив [22,'a',1,5,55] и получаем минимальный элемент массива, и получаем 55", function() {
+          assert.equal(maxVal([22, "a", 1, 5, 55]), "55");
+        });
+      });
+    </script>
+
+    <script>
+      describe("Находим индекс минимального элеманта массива", function() {
+        it("Передаем пустую строку", function() {
+          assert.equal(minIndexArr(""), "Here must be array");
+        });
+        it("Передаем пустой массив []", function() {
+          assert.equal(minIndexArr([]), "Array is empty");
+        });
+        it("Передаем массив [22,'a',1,5,55] и получаем индекс минимального элемент массива", function() {
+          assert.equal(minIndexArr([22, "a", 2, 5, 55]), "2");
+        });
+      });
+    </script>
+
+    <script>
+      describe("Находим индекс максимального элеманта массива", function() {
+        it("Передаем пустую строку", function() {
+          assert.equal(maxIndexArr(""), "Here must be array");
+        });
+        it("Передаем пустой массив []", function() {
+          assert.equal(maxIndexArr([]), "Array is empty");
+        });
+        it("Передаем массив [22,'a',1,5,55] и получаем индекс максимальный элемент массива", function() {
+          assert.equal(maxIndexArr([22, "a", 2, 5, 55]), "4");
+        });
+      });
+    </script>
+
+    <script>
+      describe("Получаем сумму элементов массива с нечетными индексами", function() {
+        it("Передаем пустую строку", function() {
+          assert.equal(sumOddNumInArr(""), "Here must be array");
+        });
+        it("Передаем пустой массив []", function() {
+          assert.equal(sumOddNumInArr([]), "Array is empty");
+        });
+        it("Передаем массив [1,2,3,4,5,6] получаем сумму элементов массива с нечетными", function() {
+          assert.equal(sumOddNumInArr([1, 2, 3, 4, 5, 6]), "9");
+        });
+      });
+    </script>
+
+    <script>
+      describe("Сделать реверс массива", function() {
+        it("Передаем пустую строку", function() {
+          assert.equal(reverseArr(""), "Here must be array");
+        });
+        it("Передаем пустой массив []", function() {
+          assert.equal(reverseArr([]), "Array is empty");
+        });
+        it("Передаем массив [1,2,3] и получаем [3,2,1]", function() {
+          assert.deepEqual(reverseArr([1, 2, 3]), [3, 2, 1]);
+        });
+      });
+    </script>
+
+    <script>
+      describe("Посчитать количество нечетных элементов массива", function() {
+        it("Передаем пустую строку", function() {
+          assert.equal(quantityOddIndexA(""), "Here must be array");
+        });
+        it("Передаем пустой массив []", function() {
+          assert.equal(quantityOddIndexA([]), "Array is empty");
+        });
+        it("Передаем массив [1,2,3,4,5,6] и получаем ", function() {
+          assert.equal(quantityOddIndexA([1, 2, 3, 4, 5, 6]), "3");
+        });
+      });
+    </script>
+
+    <script>
+      describe("Поменять местами элементы массива", function() {
+        it("Передаем пустую строку", function() {
+          assert.equal(changeSecondHalfArr(""), "Here must be array");
+        });
+        it("Передаем пустой массив []", function() {
+          assert.equal(changeSecondHalfArr([]), "Array is empty");
+        });
+        it("Передаем массив [1,2,3,4,5,6] и получаем [4,5,6,1,2,3]", function() {
+          assert.deepEqual(changeSecondHalfArr([1, 2, 3, 4, 5, 6]), [
+            4,
+            5,
+            6,
+            1,
+            2,
+            3
+          ]);
+        });
+      });
+    </script>
+
+    <script>
+      describe("BubbleSort", function() {
+        it("Передаем пустую строку", function() {
+          assert.equal(BubbleSort(""), "Here must be array");
+        });
+        it("Передаем пустой массив []", function() {
+          assert.equal(BubbleSort([]), "Array is empty");
+        });
+        it("Передаем массив [4,5,1,6,8,2] и получаем [1, 2, 4, 5, 6, 8]", function() {
+          assert.deepEqual(BubbleSort([4, 5, 1, 6, 8, 2]), [1, 2, 4, 5, 6, 8]);
+        });
+      });
+    </script>
+
+    <script>
+      describe("selectionSort", function() {
+        it("Передаем пустую строку", function() {
+          assert.equal(BubbleSort(""), "Here must be array");
+        });
+        it("Передаем пустой массив []", function() {
+          assert.equal(BubbleSort([]), "Array is empty");
+        });
+        it("Передаем массив [4,5,1,6,8,2] и получаем [3,2,1]", function() {
+          assert.deepEqual(BubbleSort([4, 5, 1, 6, 8, 2]), [1, 2, 4, 5, 6, 8]);
+        });
+      });
+    </script>
+
+    <script>
+      describe("insertionSort", function() {
+        it("Передаем пустую строку", function() {
+          assert.equal(insertionSort(""), "Here must be array");
+        });
+        it("Передаем пустой массив []", function() {
+          assert.equal(insertionSort([]), "Array is empty");
+        });
+        it("Передаем массив [4,5,1,6,8,2] и получаем [3,2,1]", function() {
+          assert.deepEqual(insertionSort([4, 5, 1, 6, 8, 2]), [
+            1,
+            2,
+            4,
+            5,
+            6,
+            8
+          ]);
+        });
+      });
+    </script>
+
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
