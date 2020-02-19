@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <script>
+      mocha.setup("bdd");
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <script>
+      var assert = chai.assert;
+    </script>
+    <script src="./tusk1.js"></script>
+    <script src="./tusk2.js"></script>
+    <script src="./tusk3.js"></script>
+    <script src="./tusk4.js"></script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script>
+      describe("Получение строкового дня недели по номеру дня", function() {
+        it("Передаем 1 и получаем 'Monday'", function() {
+          assert.equal(dayOfWeek(1), "Monday");
+        });
+        it("Передаем 7 и получаем 'Sunday'", function() {
+          assert.equal(dayOfWeek(7), "Sunday");
+        });
+
+        it("Передаем пустой массив [] и получаем 'Error you can enter only number 1 - 7'", function() {
+          assert.equal(dayOfWeek([]), "Error you can enter only number 1 - 7");
+        });
+        it("Передаем обьект и получаем 'Error you can enter only number 1 - 7'", function() {
+          assert.equal(dayOfWeek({}), "Error you can enter only number 1 - 7");
+        });
+        it("Передаем 0, и получаем 'Error you can enter only number 1 - 7'", function() {
+          assert.equal(dayOfWeek(0), "Error you can enter only number 1 - 7");
+        });
+        it("Передаем null и получаем 'Error you can enter only number 1 - 7'", function() {
+          assert.equal(
+            dayOfWeek(null),
+            "Error you can enter only number 1 - 7"
+          );
+        });
+        it("Передаем undefined и получаем 'Error you can enter only number 1 - 7'", function() {
+          assert.equal(
+            dayOfWeek(undefined),
+            "Error you can enter only number 1 - 7"
+          );
+        });
+        it("Передаем false", function() {
+          assert.equal(
+            dayOfWeek(false),
+            "Error you can enter only number 1 - 7"
+          );
+        });
+        it("Передаем true", function() {
+          assert.equal(
+            dayOfWeek(true),
+            "Error you can enter only number 1 - 7"
+          );
+        });
+        it("Передаем NaN", function() {
+          assert.equal(dayOfWeek(NaN), "Error you can enter only number 1 - 7");
+        });
+      });
+    </script>
+
+    <script>
+      describe("Получение строкового дня недели по номеру дня", function() {
+        it("Вводим 1 и получаем one", function() {
+          assert.equal(numToString(1), "one");
+        });
+        it("Вводим 999 и получаем ", function() {
+          assert.equal(numToString(999), "Nine hundred ninety nine");
+        });
+
+        it("Передаем пустой массив []", function() {
+          assert.equal(numToString([]), undefined);
+        });
+        it("Передаем обьект", function() {
+          assert.equal(numToString({}), undefined);
+        });
+        it("Передаем 0", function() {
+          assert.equal(numToString(0), undefined);
+        });
+        it("Передаем null", function() {
+          assert.equal(numToString(null), undefined);
+        });
+        it("Передаем undefined", function() {
+          assert.equal(numToString(undefined), undefined);
+        });
+        it("Передаем false", function() {
+          assert.equal(numToString(false), undefined);
+        });
+        it("Передаем true", function() {
+          assert.equal(numToString(true), undefined);
+        });
+        it("Передаем NaN", function() {
+          assert.equal(numToString(NaN), "NaN");
+        });
+      });
+    </script>
+
+    <script>
+      describe("Получение строкового дня недели по номеру дня", function() {
+        it("Передаем one получем 1'", function() {
+          assert.equal(strInNum("one"), 1);
+        });
+        it("Передаем nine hundred ninety nine получаем 999", function() {
+          assert.equal(strInNum("nine hundred ninety nine"), 999);
+        });
+
+        it("Передаем пустой массив [] и получаем Error", function() {
+          assert.equal(strInNum([]), "Error");
+        });
+        it("Передаем обьект и получаем Error", function() {
+          assert.equal(strInNum({}), "Error");
+        });
+        it("Передаем 0, и получаем Error", function() {
+          assert.equal(strInNum(0), "Error");
+        });
+        it("Передаем null и получаем Error", function() {
+          assert.equal(strInNum(null), "Error");
+        });
+        it("Передаем undefined и получаем Error", function() {
+          assert.equal(strInNum(undefined), "Error");
+        });
+        it("Передаем false", function() {
+          assert.equal(strInNum(false), "Error");
+        });
+        it("Передаем true", function() {
+          assert.equal(strInNum(true), "Error");
+        });
+        it("Передаем NaN", function() {
+          assert.equal(strInNum(NaN), "Error");
+        });
+      });
+    </script>
+
+    <script>
+      describe("Получение строкового дня недели по номеру дня", function() {
+        it("Передаем one получем 1'", function() {
+          assert.equal(distance(6, -5, 15, 33), 39.05124837953327);
+        });
+
+        it("Передаем пустой массив [] и получаем Error", function() {
+          assert.equal(distance([]), "Error");
+        });
+        it("Передаем обьект и получаем Error", function() {
+          assert.equal(distance({}), "Error");
+        });
+        it("Передаем 0, и получаем Error", function() {
+          assert.equal(distance(0), "Error");
+        });
+        it("Передаем null и получаем Error", function() {
+          assert.equal(distance(null), "Error");
+        });
+        it("Передаем undefined и получаем Error", function() {
+          assert.equal(distance(undefined), "Error");
+        });
+        it("Передаем false", function() {
+          assert.equal(distance(false), "Error");
+        });
+        it("Передаем true", function() {
+          assert.equal(distance(true), "Error");
+        });
+        it("Передаем NaN", function() {
+          assert.equal(distance(NaN), "Error");
+        });
+      });
+    </script>
+
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
