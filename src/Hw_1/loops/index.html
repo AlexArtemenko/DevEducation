@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <script>
+      mocha.setup("bdd");
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <script>
+      var assert = chai.assert;
+    </script>
+    <script src="./tusk1.js"></script>
+    <script src="./tusk2.js"></script>
+    <script src="./tusk3.js"></script>
+    <script src="./tusk4.js"></script>
+    <script src="./tusk5.js"></script>
+    <script src="./tusk6.js"></script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+
+    <script>
+      describe("Передаем число и получаем сумму четных чисел и их количество в диапазоне от 1 до 99", function() {
+        it("Передаем 99 и получаем сумму чисел 2450 и количество 49", function() {
+          assert.equal(SumAndQuant(99), `Sum ${2450}, quantity ${49}`);
+        });
+        it("Передаем пустой массив [] и получаем 'You can enter only number'", function() {
+          assert.equal(SumAndQuant([]), "You can enter only number");
+        });
+        it("Передаем обьект", function() {
+          assert.equal(SumAndQuant({}), "You can enter only number");
+        });
+        it("Передаем 0 и получаем 'You can enter only number'", function() {
+          assert.equal(SumAndQuant(0), "You can enter only number");
+        });
+        it("Передаем 1 и получаем sum 0 and quantity 0", function() {
+          assert.equal(SumAndQuant(1), `Sum ${0}, quantity ${0}`);
+        });
+        it("Передаем null и получаем 'You can enter only number'", function() {
+          assert.equal(SumAndQuant(null), "You can enter only number");
+        });
+        it("Передаем undefined и получаем 'You can enter only number'", function() {
+          assert.equal(SumAndQuant(undefined), "You can enter only number");
+        });
+        it("Передаем false", function() {
+          assert.equal(SumAndQuant(false), "You can enter only number");
+        });
+        it("Передаем true", function() {
+          assert.equal(SumAndQuant(true), "You can enter only number");
+        });
+        it("Передаем NaN", function() {
+          assert.equal(isSimpleNum(NaN), undefined);
+        });
+      });
+    </script>
+
+    <script>
+      describe("Проверка является ли число простым", function() {
+        it("Передаем 5 и получаем true", function() {
+          assert.equal(isSimpleNum(5), true);
+        });
+        it("Передаем пустой массив [] и получаем undefined", function() {
+          assert.equal(isSimpleNum([]), undefined);
+        });
+        it("Передаем обьект и получаем undefined", function() {
+          assert.equal(isSimpleNum({}), undefined);
+        });
+        it("Передаем 0, и получаем undefined", function() {
+          assert.equal(isSimpleNum(0), undefined);
+        });
+        it("Передаем null и получаем undefined", function() {
+          assert.equal(isSimpleNum(null), undefined);
+        });
+        it("Передаем undefined и получаем undefined", function() {
+          assert.equal(isSimpleNum(undefined), undefined);
+        });
+        it("Передаем false", function() {
+          assert.equal(isSimpleNum(false), undefined);
+        });
+        it("Передаем true", function() {
+          assert.equal(isSimpleNum(true), undefined);
+        });
+        it("Передаем NaN", function() {
+          assert.equal(isSimpleNum(NaN), undefined);
+        });
+      });
+    </script>
+
+    <script>
+      describe("Нахождения корня числа с точностью до целого", function() {
+        it("Передаем 5 и получаем 3", function() {
+          assert.equal(findSqrt(5), 3);
+        });
+        it("Передаем 5.3 и получаем 3", function() {
+          assert.equal(findSqrt(5.3), 3);
+        });
+
+        it("Передаем пустой массив [] и получаем undefined", function() {
+          assert.equal(findSqrt([]), undefined);
+        });
+        it("Передаем обьект и получаем undefined", function() {
+          assert.equal(findSqrt({}), undefined);
+        });
+        it("Передаем 0, и получаем undefined", function() {
+          assert.equal(findSqrt(0), undefined);
+        });
+        it("Передаем null и получаем undefined", function() {
+          assert.equal(findSqrt(null), undefined);
+        });
+        it("Передаем undefined и получаем undefined", function() {
+          assert.equal(findSqrt(undefined), undefined);
+        });
+        it("Передаем false", function() {
+          assert.equal(findSqrt(false), undefined);
+        });
+        it("Передаем true", function() {
+          assert.equal(findSqrt(true), undefined);
+        });
+        it("Передаем NaN", function() {
+          assert.equal(findSqrt(NaN), undefined);
+        });
+      });
+    </script>
+
+    <script>
+      describe("Вычислить факториал числа", function() {
+        it("Передаем 5 и получаем 3", function() {
+          assert.equal(getFuctOfNum(5), 24);
+        });
+        it("Передаем 5.3 и получаем 120", function() {
+          assert.equal(getFuctOfNum(5.3), 120);
+        });
+        it("Передаем строку и получаем undefined", function() {
+          assert.equal(getFuctOfNum("str"), undefined);
+        });
+
+        it("Передаем пустой массив [] и получаем undefined", function() {
+          assert.equal(getFuctOfNum([]), undefined);
+        });
+        it("Передаем обьект и получаем undefined", function() {
+          assert.equal(getFuctOfNum({}), undefined);
+        });
+        it("Передаем 0, и получаем undefined", function() {
+          assert.equal(getFuctOfNum(0), undefined);
+        });
+        it("Передаем null и получаем undefined", function() {
+          assert.equal(getFuctOfNum(null), undefined);
+        });
+        it("Передаем undefined и получаем undefined", function() {
+          assert.equal(getFuctOfNum(undefined), undefined);
+        });
+        it("Передаем false", function() {
+          assert.equal(getFuctOfNum(false), undefined);
+        });
+        it("Передаем true", function() {
+          assert.equal(getFuctOfNum(true), undefined);
+        });
+        it("Передаем NaN", function() {
+          assert.equal(getFuctOfNum(NaN), undefined);
+        });
+      });
+    </script>
+
+    <script>
+      describe("Получаем сумму цифр числа передаем 12345 и получаем 15", function() {
+        it("Передаем 12345 и получаем 54321", function() {
+          assert.equal(sumNumerals(12345), 15);
+        });
+        it("Передаем строку и получаем undefined", function() {
+          assert.equal(sumNumerals("str"), undefined);
+        });
+
+        it("Передаем пустой массив [] и получаем undefined", function() {
+          assert.equal(sumNumerals([]), undefined);
+        });
+        it("Передаем обьект и получаем undefined", function() {
+          assert.equal(sumNumerals({}), undefined);
+        });
+        it("Передаем 0, и получаем undefined", function() {
+          assert.equal(sumNumerals(0), undefined);
+        });
+        it("Передаем null и получаем undefined", function() {
+          assert.equal(sumNumerals(null), undefined);
+        });
+        it("Передаем undefined и получаем undefined", function() {
+          assert.equal(sumNumerals(undefined), undefined);
+        });
+        it("Передаем false", function() {
+          assert.equal(sumNumerals(false), undefined);
+        });
+        it("Передаем true", function() {
+          assert.equal(sumNumerals(true), undefined);
+        });
+        it("Передаем NaN", function() {
+          assert.equal(sumNumerals(NaN), undefined);
+        });
+      });
+    </script>
+
+    <script>
+      describe("Получаем зеркальное отображение числа 12345 - 54321", function() {
+        it("Передаем 12345 и получаем 54321", function() {
+          assert.equal(reverseNum(12345), 54321);
+        });
+        it("Передаем строку и получаем undefined", function() {
+          assert.equal(reverseNum("str"), undefined);
+        });
+
+        it("Передаем пустой массив [] и получаем undefined", function() {
+          assert.equal(reverseNum([]), undefined);
+        });
+        it("Передаем обьект и получаем undefined", function() {
+          assert.equal(reverseNum({}), undefined);
+        });
+        it("Передаем 0, и получаем undefined", function() {
+          assert.equal(reverseNum(0), undefined);
+        });
+        it("Передаем null и получаем undefined", function() {
+          assert.equal(reverseNum(null), undefined);
+        });
+        it("Передаем undefined и получаем undefined", function() {
+          assert.equal(reverseNum(undefined), undefined);
+        });
+        it("Передаем false", function() {
+          assert.equal(reverseNum(false), undefined);
+        });
+        it("Передаем true", function() {
+          assert.equal(reverseNum(true), undefined);
+        });
+        it("Передаем NaN", function() {
+          assert.equal(reverseNum(NaN), undefined);
+        });
+      });
+    </script>
+
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
