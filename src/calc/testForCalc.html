@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <script>
+      mocha.setup("bdd");
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <script>
+      var assert = chai.assert;
+    </script>
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script>
+      describe("Сложение", function() {
+        it("передаем 2, 5 и получаем 7", function() {
+          assert.equal(plus(2, 5), 7);
+        });
+      });
+      describe("Minus", function() {
+        it("передаем 5, 2", function() {
+          assert.equal(minus(5, 2), 3);
+        });
+      });
+      describe("Деление", function() {
+        it("передаем 10, 5 и получаем 2", function() {
+          assert.equal(divide(10, 5), 2);
+        });
+      });
+      describe("Умножение", function() {
+        it("передаем 2, 3", function() {
+          assert.equal(multiply(2, 3), 6);
+        });
+      });
+    </script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
