@@ -1,0 +1,91 @@
+.title {
+    width: 1000px;
+    background-color: silver;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.title>div {
+    border: 1px solid black;
+    flex-basis: 25%;
+}
+
+#list {
+    margin: 0;
+    padding: 0;
+}
+
+#list li {
+    width: 1000px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+
+#list div {
+    border: 1px solid black;
+    flex-basis: 25%;
+    text-align: center;
+    line-height: 45px;
+}
+
+.first_section {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.input-date {
+    width: 230px;
+    height: 60px;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid black;
+    color: black;
+    font-size: 22px;
+    background-color: silver;
+    outline: none;
+}
+
+.input-date:hover {
+    background-color: black;
+    color: white;
+}
+
+.second_section {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button {
+    width: 180px;
+    height: 50px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid black;
+    color: white;
+    background-color: rgb(23, 22, 22);
+    font-size: 22px;
+    border-radius: 15px;
+}
+
+.button:hover {
+    background-color: rgb(40, 39, 39);
+    color: silver;
+}
